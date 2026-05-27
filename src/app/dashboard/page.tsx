@@ -1,5 +1,6 @@
 import { createClient } from "@/utils/supabase/server";
 import AddDocumentForm from "@/components/AddDocumentForm";
+import { logout } from "@/app/actions/auth";
 import { redirect } from "next/navigation";
 
 export default async function DashboardPage() {
@@ -27,7 +28,7 @@ export default async function DashboardPage() {
     <div className="container mx-auto p-8 text-black">
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold">Tài liệu học tập của tôi</h1>
-        <form action="/actions/auth/logout" method="post">
+        <form action={logout}>
           <button className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">
             Đăng xuất
           </button>

@@ -1,15 +1,17 @@
 import { login, signup } from "@/app/actions/auth";
 
-export default function LoginPage({
-  searchParams,
-}: {
-  searchParams: { message: string };
+// 1. Thêm 'async' và đổi kiểu dữ liệu của searchParams thành Promise
+export default async function LoginPage(props: {
+  searchParams: Promise<{ message: string }>;
 }) {
+  // 2. Dùng 'await' để giải mã searchParams
+  const searchParams = await props.searchParams;
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 p-4 text-black">
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md border">
         <h1 className="text-2xl font-bold text-center mb-6">
-          StudySync Lọc Đăng Nhập
+          StudySync Đăng Nhập
         </h1>
 
         {searchParams?.message && (
