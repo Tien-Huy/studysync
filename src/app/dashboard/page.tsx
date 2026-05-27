@@ -1,4 +1,5 @@
 import { createClient } from "@/utils/supabase/server";
+import AddDocumentForm from "@/components/AddDocumentForm";
 import { redirect } from "next/navigation";
 
 export default async function DashboardPage() {
@@ -32,6 +33,7 @@ export default async function DashboardPage() {
           </button>
         </form>
       </div>
+      <AddDocumentForm />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {documents && documents.length > 0 ? (
