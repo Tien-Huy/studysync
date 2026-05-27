@@ -1,4 +1,3 @@
-// app/login/page.tsx
 import { login, signup } from "@/app/actions/auth";
 
 export default function LoginPage({
